@@ -3,7 +3,7 @@ import { render } from "react-dom"
 import Plot from "./Plot"
 
 export function App() {
-  const [data, setData] = useState()
+  const [data, setData] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:4000/api")
@@ -12,7 +12,9 @@ export function App() {
   }, [setData])
 
   return (
-    <div>{!data ? null : <Plot data={data} width={700} height={700} />}</div>
+    <div>
+      <Plot data={data} width={700} height={700} />
+    </div>
   )
 }
 
