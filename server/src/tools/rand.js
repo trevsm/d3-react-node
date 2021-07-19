@@ -1,5 +1,5 @@
 function rand() {
-  return Math.floor(Math.random() * 680)
+  return Math.floor(Math.random() * 100)
 }
 
 function randArray(size) {

@@ -16,7 +16,7 @@ app.use(
 app.use(express.static(path.resolve(__dirname, "../../client/build")))
 
 app.get("/api", (req, res) => {
-  const data = randArray(100000)
+  const data = randArray(5000)
   res.json(data)
 })
 

@@ -13,7 +13,7 @@ export function App() {
 
   return (
     <div>
-      <Plot data={data} width={700} height={700} />
+      <Plot data={data} width={100} height={100} />
     </div>
   )
 }
