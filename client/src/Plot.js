@@ -1,17 +1,17 @@
 import React, { useEffect, useRef } from "react"
 
 function Plot({ data, width, height }) {
-  const ref = useRef()
+  const cRef = useRef()
 
   useEffect(() => {
-    var canvas = ref.current
-    var canvasWidth = canvas.width
-    var canvasHeight = canvas.height
-    var ctx = canvas.getContext("2d")
-    var cd = ctx.getImageData(0, 0, canvasWidth, canvasHeight)
+    const canvas = cRef.current
+    const canvasWidth = canvas.width
+    const canvasHeight = canvas.height
+    const ctx = canvas.getContext("2d")
+    const cd = ctx.getImageData(0, 0, canvasWidth, canvasHeight)
 
     function drawPixel(x, y, color) {
-      var index = (x + y * canvasWidth) * 4
+      const index = (x + y * canvasWidth) * 4
       const { r, g, b, a } = color
 
       cd.data[index + 0] = r
@@ -33,7 +33,7 @@ function Plot({ data, width, height }) {
 
   return (
     <canvas
-      ref={ref}
+      ref={cRef}
       width={width}
       height={height}
       style={{
